@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "generators/templates/db_backend_migration.rb",
      "globalize2.gemspec",
      "init.rb",
+     "rails/init.rb",
      "lib/globalize.rb",
      "lib/globalize/active_record.rb",
      "lib/globalize/active_record/adapter.rb",
