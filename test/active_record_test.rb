@@ -321,9 +321,9 @@ class ActiveRecordTest < ActiveSupport::TestCase
     post.set_translations options
     post.reload
 
-    assert ["bar2", "bar2"], [post.subject, post.content]
+    assert_equal ["bar2", "bar2"], [post.subject, post.content]
     Post.locale = :de
-    assert ["foo2", "foo2"], [post.subject, post.content]
+    assert_equal ["foo2", "foo2"], [post.subject, post.content]
   end
 
   test "setting only one translation with set_translations" do
@@ -336,9 +336,9 @@ class ActiveRecordTest < ActiveSupport::TestCase
     post.set_translations options
     post.reload
 
-    assert ["bar2", "bar2"], [post.subject, post.content]
+    assert_equal ["bar2", "bar2"], [post.subject, post.content]
     Post.locale = :de
-    assert ["foo1", "foo1"], [post.subject, post.content]
+    assert_equal ["foo1", "foo1"], [post.subject, post.content]
   end
 
   test "setting only selected attributes with set_translations" do
@@ -351,9 +351,9 @@ class ActiveRecordTest < ActiveSupport::TestCase
     post.set_translations options
     post.reload
 
-    assert ["bar2", "bar1"], [post.subject, post.content]
+    assert_equal ["bar2", "bar1"], [post.subject, post.content]
     Post.locale = :de
-    assert ["foo1", "foo2"], [post.subject, post.content]
+    assert_equal ["foo1", "foo2"], [post.subject, post.content]
   end
 
   test "setting invalid attributes raises ArgumentError" do
